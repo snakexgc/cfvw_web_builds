@@ -1,10 +1,10 @@
 diff --git a/libs/common/src/auth/models/domain/kdf-config.ts b/libs/common/src/auth/models/domain/kdf-config.ts
-index 123456789..abcdef123 100644
+index 000000000..111111111 100644
 --- a/libs/common/src/auth/models/domain/kdf-config.ts
 +++ b/libs/common/src/auth/models/domain/kdf-config.ts
-@@ -1,10 +1,10 @@
- import { KdfType } from "../../enums/kdf-type.enum";
- 
+@@ -5,10 +5,10 @@ import { KdfType } from "../../enums/kdf-type.enum";
+  * Values are based on the OWASP Cheat Sheet Series recommendations.
+  */
  export const DEFAULT_KDF_CONFIG = {
 -  type: KdfType.PBKDF2_SHA256,
 -  iterations: 600000,
@@ -17,27 +17,3 @@ index 123456789..abcdef123 100644
  } as const;
  
  export class KdfConfig {
-diff --git a/libs/common/src/auth/enums/kdf-type.enum.ts b/libs/common/src/auth/enums/kdf-type.enum.ts
-index 123456789..abcdef123 100644
---- a/libs/common/src/auth/enums/kdf-type.enum.ts
-+++ b/libs/common/src/auth/enums/kdf-type.enum.ts
-@@ -1,4 +1,4 @@
- export enum KdfType {
--  PBKDF2_SHA256 = 0,
--  Argon2id = 1,
-+  PBKDF2_SHA256 = 0,
-+  Argon2id = 1,
- }
-diff --git a/libs/common/src/auth/services/kdf-config.service.ts b/libs/common/src/auth/services/kdf-config.service.ts
-index 123456789..abcdef123 100644
---- a/libs/common/src/auth/services/kdf-config.service.ts
-+++ b/libs/common/src/auth/services/kdf-config.service.ts
-@@ -10,7 +10,7 @@ import { KdfConfig, DEFAULT_KDF_CONFIG } from "../models/domain/kdf-config";
- @Injectable()
- export class KdfConfigService {
-   getDefaultKdfConfig(): KdfConfig {
--    return new KdfConfig(DEFAULT_KDF_CONFIG);
-+    return new KdfConfig(DEFAULT_KDF_CONFIG);
-   }
- 
-   validateKdfConfig(config: KdfConfig): boolean {

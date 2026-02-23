@@ -71,4 +71,11 @@ pushd "${VAULT_FOLDER}"
     git fetch --depth 1 ${CHECKOUT_ARGS:-} vaultwarden "${VAULT_VERSION}"
     # Checkout the branch we want
     git -c advice.detachedHead=false checkout "${VAULT_VERSION}"
+
+    # Apply KDF Argon2id default patch if exists
+    KDF_PATCH_FILE="${BASEDIR}/../patches/v2025.4.1-kdf-argon2id.patch"
+    if [ -f "${KDF_PATCH_FILE}" ]; then
+        echo "Applying KDF Argon2id default patch..."
+        git apply "${KDF_PATCH_FILE}" || echo "Warning: Failed to apply KDF patch, continuing without it"
+    fi
 popd
